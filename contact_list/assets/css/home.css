@@ -1,0 +1,12 @@
+#body{
+    text-align: center;
+}
+#contact-heading{
+    text-align: center;
+    font-size: larger;
+    font-family: sans-serif;
+    background-color: lightgray;
+}
+#contact-heading:hover{
+    background-color: blue;
+}

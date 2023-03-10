@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+        <!-- <link rel=“stylesheet” type=“text/css” href=“/css/home.css” /> -->
+        <link rel="stylesheet" href="https://kit.fontawesome.com/83564fc386.css" crossorigin="anonymous">
+      <style>
+#contact-heading{
+    text-align: center;
+    font-size: larger;
+    font-family: sans-serif;
+    background-color: lightgray;
+    margin-top: 0px;
+}
+#contact-heading:hover{
+    background-color: blue;
+}
+#contact-list{
+    text-align: center;
+    font-family: sans-serif;
+    font-style: unset;
+    font-size: large;
+}
+#contact-name{
+    text-align: center;
+    width: 200px;
+    height: auto;
+    background-color: rgb(24, 152, 243);
+    font-size: larger;
+}
+#contact-number{
+    font-size: larger;
+    background-color: rgb(24, 152, 243);
+}
+#contact-number:hover{
+    background-color: lightgrey;
+}
+#contact-name:hover{
+    background-color: lightgrey;
+}
+ul {
+  list-style-type: none;
+}
+.form{
+    text-align: center;
+}
+      </style>
+    <title>
+        <%= title %>
+    </title>    
+
+
+</head>
+<body>
+
+  <div id="contact-heading">
+    <i class="fa-solid fa-user"></i>
+    <h1>CONTACT LIST</h1>
+  </div>  
+   <ul>
+        <% for(let i of contact_List){%>
+            <div id="contact-list">
+               
+            <li> 
+                <span id="contact-name">
+               
+                <%= i.name %>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+        <!-- <span id="contact-number"> -->
+            
+                <%= i.phoneno %>
+               
+      
+          
+               <form method="post" action="/delete-contact/?phoneno=<%= i.phoneno %>">
+                    <button type="submit"> 
+                        Delete
+                    </button>
+                </form>
+               
+            </span>
+            </li>
+       
+            <%}%>
+            
+   </ul>
+
+
+<div class="form">
+   <form method="post" action="/create-contact">
+    <input type="text" name="name" placeholder="Enter a name" required>
+    <input type="text" name="phoneno" placeholder="Enter a number" required>
+    <button type="submit">ADD CONTACT</button>
+   </form>
+</div>
+</body>
+</html>
